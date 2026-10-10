@@ -20,7 +20,7 @@ Helps HR screen CVs received by Gmail. It reads a job description, extracts the 
     python src/cv_extractor.py     # extract text from CVs
     python src/ai_extractor.py     # extract requirements and CV details
     python src/matcher.py          # compare CVs with the job
-    python tests/test_matching.py  # test matching with different wording
+    python tests/matching.py  # test matching with different wording
 
 ## How matching works
 Each job requirement gets one result: MEETS, PARTIAL, or NO EVIDENCE FOUND.
