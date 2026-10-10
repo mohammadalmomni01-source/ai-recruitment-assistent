@@ -25,7 +25,13 @@ DEGREES = {
 PROJECT_WORDS = r"intern|training|developed|built|designed|implemented|architected"
 YEARS_PATTERN = r"\d+\+?\s*(years?|yrs?)"
 CERT_WORDS = r"certif|diploma|licen[sc]e|accredit"
-
+RELATED_TERMS = {
+    "git": ["gitlab", "bitbucket", "pull request"],
+    "machine learning": ["scikit-learn", "sklearn", "tensorflow", "pytorch",
+                         "neural network", "classification model", "deep learning"],
+    "nlp": ["natural language", "text classification", "tokeniz"],
+    "docker": ["container", "kubernetes"],
+}
 JUDGE_PROMPT = """You check whether a CV excerpt shows that a candidate meets a job requirement.
 Return ONLY valid JSON: {"status": "meets", "evidence": ""}
 status must be one of: "meets", "partial", "none".
@@ -90,7 +96,14 @@ def partial_hit(requirement, chunks):
         if n > best_n:
             best, best_n = chunk, n
     return best if best_n >= 2 else None
-
+def related_hit(requirement, chunks):
+    req = requirement.lower()
+    for key, related in RELATED_TERMS.items():
+        if re.search(r"(?<![a-z0-9])" + re.escape(key) + r"(?![a-z0-9])", req):
+            for chunk in chunks:
+                if any(w in chunk.lower() for w in related):
+                    return chunk
+    return None
 
 def normalize(s):
     return re.sub(r"\s+", " ", s).strip().lower()
@@ -196,8 +209,12 @@ def match_requirement(req, kw_chunks, cv_text, matches):
     partial = partial_hit(req["text"], kw_chunks)
     if partial:
         result.update(status="partial", evidence=partial, method="some keywords found")
+        return result
+    related = related_hit(req["text"], kw_chunks) if req["category"] == "skill" else None
+    if related:
+        result.update(status="partial", evidence=related,
+                      method="related term found, not the exact skill")
     return result
-
 
 def match_cv(job, cv_text):
     reqs = build_requirements(job)
