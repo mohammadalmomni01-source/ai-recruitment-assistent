@@ -1,0 +1,33 @@
+Job Title: Junior AI Engineer
+Company: Sample Company
+
+About the role
+We are looking for a Junior AI Engineer to help build and maintain AI-powered tools for our internal teams. You will work with Python, language models and data pipelines under the guidance of senior engineers.
+
+Required skills
+- Strong Python programming
+- Experience calling REST APIs and working with JSON
+- Git and GitHub for version control
+- Basic knowledge of machine learning or NLP concepts
+- Experience with SQL or another database
+
+Preferred skills
+- Experience with LLMs, prompt engineering, or tools such as Ollama
+- Familiarity with Docker
+- Experience with FastAPI or Flask
+- Knowledge of embeddings and vector search
+
+Experience
+- Required: at least 1 year of experience, including internships or substantial projects in software or AI
+- Preferred: 2 years in a software development role
+
+Education
+- Required: Bachelor's degree in Computer Science, Software Engineering, Data Science or a related field
+
+Languages
+- English (required, professional working level)
+- Arabic (preferred)
+
+Certifications
+- None required
+- Preferred: an AI, machine learning or cloud certification (for example Google Cloud, AWS or Azure)
