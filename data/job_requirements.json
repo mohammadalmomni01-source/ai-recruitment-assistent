@@ -1,0 +1,29 @@
+{
+  "job_title": "Junior AI Engineer",
+  "required_skills": [
+    "Strong Python programming",
+    "Experience calling REST APIs and working with JSON",
+    "Git and GitHub for version control",
+    "Basic knowledge of machine learning or NLP concepts",
+    "Experience with SQL or another database"
+  ],
+  "preferred_skills": [
+    "Experience with LLMs, prompt engineering, or tools such as Ollama",
+    "Familiarity with Docker",
+    "Experience with FastAPI or Flask",
+    "Knowledge of embeddings and vector search"
+  ],
+  "required_experience": "at least 1 year of experience, including internships or substantial projects in software or AI",
+  "preferred_experience": "2 years in a software development role",
+  "education": "Bachelor's degree in Computer Science, Software Engineering, Data Science or a related field",
+  "required_languages": [
+    "English"
+  ],
+  "preferred_languages": [
+    "Arabic"
+  ],
+  "required_certifications": [],
+  "preferred_certifications": [
+    "an AI, machine learning or cloud certification (for example Google Cloud, AWS or Azure)"
+  ]
+}
